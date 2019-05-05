@@ -15,23 +15,22 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
-    if (@post.save)
-    {
+    if (@post.save)    
       redirect_to @post, notice: "The post was created!"
-    } else {
+    else
       render 'new'
-    }
+    end
   end
 
   def edit
   end
 
   def update
-    if (@post.update(post_params)){
+    if (@post.update(post_params))
       redirect_to @post, notice: "Update successful"
-    } else {
+    else
       render 'edit'
-    }
+    end    
   end
 
   def destroy
